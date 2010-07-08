@@ -1,0 +1,27 @@
+Memcached Output Cache for CodeIgniter
+by James Constable
+me@jamesconstable.co.uk
+@weejames
+
+08/07/2010
+
+Intro:
+This library allows you to use Memcached as a frontend caching mechanism for CodeIgniter.  It overrides the underlying functions associated with the standard web page caching functionality described 
+here: http://codeigniter.com/user_guide/general/caching.html
+
+Requirements:
+Existing Memcached Server
+CodeIgniter 1.7.2
+PHP 5.2 (not a requirement but that's all i've tested with)
+PHP Memcached extension
+
+Usage:
+
+1) Place MY_Output.php in application/libraries/ (if you've changed the subclass_prefix configuration you may need to alter the filename).
+2) Place the memcached.php in application/config/ and fill in the values appropriately.
+3) Enable caching in the appropriate controllers.
+
+The functions are syntactically compatible with the existing cache functionality and caches are still enabled using $this->output->cache(n) within your controllers. Cached pages will still persist 
+until expiration, or the cache is cleared manually on the Memcached server.
+
+Note: Unlike the CodeIgniter library, this modification also takes into account the contents of the $_GET and $_POST arrays when caching data.
