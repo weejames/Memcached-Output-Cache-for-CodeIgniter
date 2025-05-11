@@ -5,7 +5,7 @@ class MY_Output extends CI_Output {
 	/**
 	 * Write a Cache File
 	 *
-	 * Stock CI method altered to write cache to a mongodb instance as specified in application/config/mongodb.php
+	 * Stock CI method altered to write cache to a memcached instance as specified in application/config/memcached.php
 	 * Additionally the $GET and $POST arrays are taken into account when caching a page.
 	 *
 	 * @access	public
